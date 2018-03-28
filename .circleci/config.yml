@@ -30,7 +30,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: cd /usr/local/src/ && curl -o /tmp/protobuf.tar.gz https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz && tar xvf protobuf.tar.gz && cd protobuf-2.5.0 && ./autogen.sh && ./configure --prefix=/usr && make && make install && protoc --version
+      - run: cd /usr/local/src/ && curl -o /tmp/protobuf.tar.gz https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz && tar xvf /tmp/protobuf.tar.gz && cd protobuf-2.5.0 && ./autogen.sh && ./configure --prefix=/usr && make && make install && protoc --version
       
       - run: mvn dependency:go-offline
 
